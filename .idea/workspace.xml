@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="cd7e8d49-f2d9-4172-b182-b1b14865b3e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/@types/model/Author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/model/Author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/@types/model/Book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/model/Book.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/book.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/route/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/book.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +52,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/@types/import" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -63,7 +72,9 @@
       <workItem from="1586515991365" duration="266000" />
       <workItem from="1586970815718" duration="28890000" />
       <workItem from="1587102857291" duration="8375000" />
-      <workItem from="1587112814083" duration="9117000" />
+      <workItem from="1587112814083" duration="10043000" />
+      <workItem from="1587298046259" duration="2229000" />
+      <workItem from="1587365921515" duration="15843000" />
     </task>
     <servers />
   </component>
