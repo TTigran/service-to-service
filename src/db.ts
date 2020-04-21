@@ -5,8 +5,8 @@ import {
 } from "./model"
 import "../env"
 
-const mongoUrl = process.env.MONGODB_URL || 'mongodb://localhost:27017';
-const database = process.env.MONGODB_DATABASE || 'mydb';
+const mongoUrl = process.env.MONGODB_URL || "mongodb://localhost:27017";
+const database = process.env.MONGODB_DATABASE || "mydb";
 const mongoArgs = process.env.MONGODB_ARGS;
 
 export const  getModel = async () => {
@@ -17,6 +17,6 @@ export const  getModel = async () => {
         const Book = model("Book", BookSchema,"Book");
         return {Author, Book }
     }catch (e) {
-        console.log(e.message);
+        console.error(e.message);
     }
 }
