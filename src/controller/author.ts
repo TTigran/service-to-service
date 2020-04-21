@@ -20,8 +20,9 @@ const addAuthor = async (req:Request, res:Response): Promise<void> => {
 };
 
 const getById = async (req:Request, res:Response) : Promise<void> => {
+    const i = req.params.id
     try {
-        const recipientData = await service.sendTargetAuthor(req.params.id);
+        const recipientData = await service.getAuthorById(i);
         res.status(200).json(recipientData);
     }catch (e) {
         res.status(500).json({error:e.message})

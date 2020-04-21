@@ -1,7 +1,7 @@
 import {connect, model} from "mongoose"
 import {
-    AuthorSchema,
-    BookSchema
+    AuthorModel,
+    BookModel
 } from "./model"
 import "../env"
 
@@ -13,8 +13,8 @@ export const  getModel = async () => {
     const connectionsString = [mongoUrl,database].join("/");
     try {
         await connect(connectionsString,{useNewUrlParser:true});
-        const Author = model("Author",AuthorSchema,"Author");
-        const Book = model("Book", BookSchema,"Book");
+        const Author = AuthorModel
+        const Book = BookModel
         return {Author, Book }
     }catch (e) {
         console.error(e.message);

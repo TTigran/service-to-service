@@ -5,10 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/@types/model/Author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/model/Author.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/@types/model/Book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/model/Book.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/author.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/book.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/book.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/author.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/book.ts" afterDir="false" />
     </list>
@@ -74,7 +75,8 @@
       <workItem from="1587102857291" duration="8375000" />
       <workItem from="1587112814083" duration="10043000" />
       <workItem from="1587298046259" duration="2229000" />
-      <workItem from="1587365921515" duration="15843000" />
+      <workItem from="1587365921515" duration="16311000" />
+      <workItem from="1587469084080" duration="6966000" />
     </task>
     <servers />
   </component>
