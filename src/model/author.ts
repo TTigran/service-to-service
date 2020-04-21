@@ -1,6 +1,12 @@
-import mongoose from "mongoose"
+import mongoose , { Schema, Document }  from "mongoose"
 
-export const AuthorSchema = new mongoose.Schema({
+export interface IAuthor extends Document {
+    id: number;
+    name: string;
+    book:Array<string>;
+}
+
+const Author:Schema = new mongoose.Schema({
     id: {
         type: Number,
         required:true,
@@ -14,7 +20,7 @@ export const AuthorSchema = new mongoose.Schema({
     }
 });
 
-
+export const AuthorModel = mongoose.model<IAuthor>('Author', Author);
 
 
 

@@ -1,4 +1,4 @@
-export  default class Book {
+export  type Book = {
   title: string;
   description: string;
 }

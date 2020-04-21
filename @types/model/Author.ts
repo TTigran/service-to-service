@@ -1,4 +1,4 @@
-export default class Author {
+export  type Author = {
     id:number;
     name: string;
     book: Array<string>;
