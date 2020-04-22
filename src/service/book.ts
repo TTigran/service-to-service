@@ -1,4 +1,3 @@
-import {Request,Response} from "express"
 import {getModel} from "../db";
 import  * as m from "../../@types/import/module"
 import "../../env"
