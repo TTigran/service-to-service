@@ -7,8 +7,8 @@ import {Author} from "../../@types/model/Author";
 
 
 const { Node } = m.importModule("zeronode");
-const  zeroAddress = process.env.ZERO_ADDRESS;
-const  zeroEvent = process.env.ZERO_EVENT;
+const  zeroAddress: string = process.env.ZERO_ADDRESS;
+const  zeroEvent: string = process.env.ZERO_EVENT;
 
 const getAuthorData = async (): Promise<Array<Author>>  => {
  try {
