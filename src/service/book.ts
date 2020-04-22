@@ -4,8 +4,8 @@ import "../../env"
 import {Book} from "../../@types/model/Book";
 
 const { Node } = m.importModule("zeronode");
-const  zeroAddress = process.env.ZERO_ADDRESS;
-const  zeroEvent = process.env.ZERO_EVENT;
+const  zeroAddress:string = process.env.ZERO_ADDRESS;
+const  zeroEvent:string = process.env.ZERO_EVENT;
 
 (async function() {
     const model =await getModel()
