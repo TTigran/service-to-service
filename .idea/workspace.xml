@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd7e8d49-f2d9-4172-b182-b1b14865b3e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/author.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/@types/model/Author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/model/Author.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/@types/model/Book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/@types/model/Book.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/author.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/author.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/book.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/author.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/book.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -40,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tag-microservice" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,7 +72,9 @@
       <workItem from="1587112814083" duration="10043000" />
       <workItem from="1587298046259" duration="2229000" />
       <workItem from="1587365921515" duration="16311000" />
-      <workItem from="1587469084080" duration="6966000" />
+      <workItem from="1587469084080" duration="7878000" />
+      <workItem from="1587540159672" duration="1536000" />
+      <workItem from="1587553135863" duration="782000" />
     </task>
     <servers />
   </component>
@@ -106,9 +104,10 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1587026995868" />
-    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1586501515586">
-      <screen x="49" y="27" width="1317" height="741" />
+    <state x="481" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587555424138">
+      <screen x="35" y="27" width="1331" height="741" />
     </state>
+    <state x="481" y="154" key="FileChooserDialogImpl/35.27.1331.741@35.27.1331.741" timestamp="1587555424138" />
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1586501515586" />
     <state x="290" y="133" width="824" height="526" key="IDE.errors.dialog" timestamp="1587113579799">
       <screen x="49" y="27" width="1317" height="741" />
