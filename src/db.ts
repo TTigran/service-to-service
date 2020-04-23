@@ -5,9 +5,9 @@ import {
 } from "./model"
 import "../env"
 
-const mongoUrl = process.env.MONGODB_URL || "mongodb://localhost:27017";
-const database = process.env.MONGODB_DATABASE || "mydb";
-const mongoArgs = process.env.MONGODB_ARGS;
+const mongoUrl:string = process.env.MONGODB_URL || "mongodb://localhost:27017";
+const database:string = process.env.MONGODB_DATABASE || "mydb";
+
 
 export const  getModel = async () => {
     const connectionsString = [mongoUrl,database].join("/");
