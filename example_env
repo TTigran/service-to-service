@@ -1,0 +1,7 @@
+NODE_PORT = 8000
+
+MONGODB_URL = mongodb://localhost:27017
+MONGODB_DATABASE = test
+
+ZERO_ADDRESS = tcp://0.0.0.0:5000
+ZERO_EVENT = send-data
