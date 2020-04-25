@@ -18,9 +18,28 @@ const getAuthorData = async (): Promise<Array<Author>>  => {
  }catch (e) {
    console.error(e.message);
  }
-
 };
+const getAllAuthor= async (): Promise<Array<Author>>  => {
+ try {
+   const model = await getModel();
+   const data = await model.Author.find();
+     const node = new Node({
+         id: 'sender',
+         options: {layer:"sender"},
+     });
 
+     await node.connect({ address: zeroAddress });
+
+     const recipientData  = await node.request({
+         to:"recipient",
+         event:zeroEvent,
+         data:data
+     })
+     return recipientData;
+ }catch (e) {
+   console.error(e.message);
+ }
+};
 const createAuthor = async (body: Author): Promise<Author> => {
  try {
    const model = await getModel();
@@ -55,5 +74,5 @@ const getAuthorById = async (id:string): Promise<any> => {
 
 
 export default {
-  createAuthor, getAuthorData ,getAuthorById
+  createAuthor, getAuthorData ,getAuthorById,getAllAuthor
 }

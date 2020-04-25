@@ -1,7 +1,12 @@
-# service-to-service
 
-# creatte  .env file alik as example_env
+### service to service calls using zeronode 
 
-# in console yarn for install dependansi
+##### steps for running code
 
-# yarn start
+1. create .env file like .env.example
+2. run in command line yarn
+3. for running services you need to run this commands <br/>
+3.1 yarn start:author <br /> 
+3.2 yarn start:book  <br /> 
+
+

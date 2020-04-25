@@ -1,18 +1,18 @@
 import mongoose,{Schema,Document} from "mongoose"
 
 export interface IBook extends Document{
-    title:string,
-    description:string
+    bookName:string,
+    authorID:number
 }
 
  const Book: Schema = new mongoose.Schema({
-      title: {
+      bookName: {
         type: String,
         required: true,
         unique: true
       },
-      description: {
-        type: String,
+      authorID: {
+        type: Number
       }
 });
 
