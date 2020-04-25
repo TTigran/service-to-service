@@ -9,7 +9,14 @@ const getAuthor = async (req:Request, res:Response): Promise<void> => {
         res.status(500).json({error:e.message})
     }
 };
-
+const getAll = async (req:Request, res:Response): Promise<void> => {
+    try {
+        const data  = await service.getAllAuthor();
+        res.status(200).json(data);
+    }catch (e) {
+        res.status(500).json({error:e.message})
+    }
+};
 const addAuthor = async (req:Request, res:Response): Promise<void> => {
     try {
         const addedData =  await service.createAuthor(req.body);
@@ -30,5 +37,5 @@ const getById = async (req:Request, res:Response) : Promise<void> => {
 };
 
 export default {
-  addAuthor, getAuthor, getById
+  addAuthor, getAuthor, getById, getAll
 }

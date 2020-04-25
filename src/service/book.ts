@@ -1,48 +1,64 @@
 import {getModel} from "../db";
-import  * as m from "../../@types/import/module"
+import * as m from "../../@types/import/module"
 import "../../env"
 import {Book} from "../../@types/model/Book";
+import {mapDefined} from "tslint/lib/utils";
+import {isNumber} from "util";
+import {IAuthor, IBook} from "../model";
 
-const { Node } = m.importModule("zeronode");
-const  zeroAddress:string = process.env.ZERO_ADDRESS;
-const  zeroEvent:string = process.env.ZERO_EVENT;
+const {Node} = m.importModule("zeronode");
+const zeroAddress: string = process.env.ZERO_ADDRESS;
+const zeroEvent: string = process.env.ZERO_EVENT;
 
-(async function() {
-    const model =await getModel()
+(async function () {
+    const model = await getModel()
 
-    const node  = new Node({
+    const node = new Node({
         id: "recipient",
-        bind:zeroAddress,
+        bind: zeroAddress,
         options: {layer: "recipient"}
     });
 
     await node.bind();
 
-    node.onRequest(zeroEvent, async ({body,reply} : {body:any,reply:any}) =>{
-        const filterBook = body[0]["book"];
-        const bookData = await model.Book.find({title:{$in:filterBook}});
-        reply(bookData)
+    node.onRequest(zeroEvent, async ({body, reply}: { body: any, reply: any }) => {
+        const list: any = []
+        let count: number = 0;
+        const bookData = await model.Book.find();
+
+        await Promise.all(body.map(async (author: IAuthor, index: number) => {
+            const bookData = await model.Book.find({authorID: author.id});
+            const bookNames = await bookData.map((item:IBook)=>{
+                return item.bookName;
+            })
+            list.push({
+                id: count++,
+                author: author.name,
+                bookNames: bookNames
+            })
+        }))
+        reply(list)
     });
 
 }());
 
 
-const getBookData = async (): Promise<Array<Book>> => {
-  try {
-      const model = await getModel();
-      const bookData =  await model.Book.find()
-      return bookData
-  }catch (e) {
-      console.error(e.message)
-  }
+const getBookData = async (): Promise<Array<any>> => {
+    try {
+        const model = await getModel();
+        const bookData = await model.Book.find()
+        return bookData
+    } catch (e) {
+        console.error(e.message)
+    }
 };
 
-const createBook = async (body: Book): Promise<Book> => {
+const createBook = async (body: Book): Promise<any> => {
     const model = await getModel();
     const addedData = await model.Book.create(body);
     return addedData;
 };
 
 
-export default { getBookData,createBook}
+export default {getBookData, createBook}
 

@@ -24,8 +24,10 @@
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "tsc": "tsc",
-    "start": "ts-node src/index.ts",
-    "test": "jest --forceExit --coverage --verbose --detectOpenHandles"
+    "start:author": "ts-node src/servers/author.ts",
+    "start:book": "ts-node src/servers/book.ts",
+    "test:author": "jest test/author.test.ts",
+    "test:book": "jest test/book.test.ts"
   },
   "dependencies": {
     "axios": "^0.19.2",
