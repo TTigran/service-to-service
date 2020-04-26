@@ -1,41 +1,38 @@
-import {getModel}   from '../db';
-import mongodb from 'mongodb';
-import ObjectID = mongodb.ObjectID
-import  * as m from "../../@types/import/module"
-import "../../env"
-import {Author} from "../../@types/model/Author";
+import  * as m from '../../@types/import/module';
+import { Author } from '../../@types/model/Author';
+import { getModel }   from '../db';
+
+import '../../env';
 
 
-const { Node } = m.importModule("zeronode");
+const { Node } = m.importModule('zeronode');
 const  zeroAddress: string = process.env.ZERO_ADDRESS;
 const  zeroEvent: string = process.env.ZERO_EVENT;
 
-const getAuthorData = async (): Promise<Array<Author>>  => {
+const getAuthorData = async (): Promise<Author[]>  => {
  try {
    const model = await getModel();
-   const data = await model.Author.find();
-   return data;
+   return await model.Author.find();
  }catch (e) {
    console.error(e.message);
  }
 };
-const getAllAuthor= async (): Promise<Array<Author>>  => {
+const getAllAuthor = async (): Promise<Author[]>  => {
  try {
    const model = await getModel();
    const data = await model.Author.find();
      const node = new Node({
          id: 'sender',
-         options: {layer:"sender"},
+         options: {layer: 'sender'},
      });
 
      await node.connect({ address: zeroAddress });
 
-     const recipientData  = await node.request({
-         to:"recipient",
-         event:zeroEvent,
-         data:data
-     })
-     return recipientData;
+     return await node.request({
+         to: 'recipient',
+         event: zeroEvent,
+         data,
+     });
  }catch (e) {
    console.error(e.message);
  }
@@ -43,36 +40,34 @@ const getAllAuthor= async (): Promise<Array<Author>>  => {
 const createAuthor = async (body: Author): Promise<Author> => {
  try {
    const model = await getModel();
-   const addedData = await model.Author.create(body);
-   return addedData;
+   return await model.Author.create(body);
+
  }catch (e) {
    console.error(e.message);
  }
 };
 
-const getAuthorById = async (id:string): Promise<any> => {
+const getAuthorById = async (id: string): Promise<any> => {
   const model = await getModel();
-  const  dataById = await  model.Author.find({id:id});
+  const  dataById = await  model.Author.find({ id });
 
   const node = new Node({
     id: 'sender',
-    options: {layer:"sender"},
+    options: {layer: 'sender'},
   });
 
   await node.connect({ address: zeroAddress });
 
-  const recipientData  = await node.request({
-    to:"recipient",
-    event:zeroEvent,
-    data:dataById
-  })
-
-  return recipientData;
-}
+  return await node.request({
+    to: 'recipient',
+    event: zeroEvent,
+    data: dataById
+  });
+};
 
 
 
 
-export default {
-  createAuthor, getAuthorData ,getAuthorById,getAllAuthor
-}
+export {
+  createAuthor, getAuthorData , getAuthorById, getAllAuthor
+};

@@ -1,41 +1,46 @@
-import {Request,Response} from "express"
-import service from '../service/author'
+import { Request, Response, NextFunction } from 'express';
+import { getAllAuthor, getAuthorById, getAuthorData, createAuthor } from '../service';
 
-const getAuthor = async (req:Request, res:Response): Promise<void> => {
+const getAuthor = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-        const data  = await service.getAuthorData();
+        const data  = await getAuthorData();
         res.status(200).json(data);
     }catch (e) {
-        res.status(500).json({error:e.message})
+        next(e);
     }
 };
-const getAll = async (req:Request, res:Response): Promise<void> => {
+const getAll = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-        const data  = await service.getAllAuthor();
+        const data  = await getAllAuthor();
         res.status(200).json(data);
     }catch (e) {
-        res.status(500).json({error:e.message})
+        next(e);
     }
 };
-const addAuthor = async (req:Request, res:Response): Promise<void> => {
+const addAuthor = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    console.log(req.body);
+
     try {
-        const addedData =  await service.createAuthor(req.body);
-        res.status(201).json(addedData)
+        const addedData =  await createAuthor(req.body);
+        res.status(201).json(addedData);
     }catch (e) {
-        res.status(500).json({error:e.message})
+        next(e);
     }
 };
 
-const getById = async (req:Request, res:Response) : Promise<void> => {
-    const i = req.params.id
+const getById = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
+    const i = req.params.id;
     try {
-        const recipientData = await service.getAuthorById(i);
+        const recipientData = await getAuthorById(i);
         res.status(200).json(recipientData);
     }catch (e) {
-        res.status(500).json({error:e.message})
+        next(e);
     }
 };
 
-export default {
-  addAuthor, getAuthor, getById, getAll
-}
+export {
+  addAuthor,
+  getAuthor,
+  getById,
+  getAll
+};

@@ -1,15 +1,26 @@
-import {Request,Response} from "express"
-import service from "../service/book"
+import { Request, Response, NextFunction } from 'express';
+import { createBook, getBookData } from '../service';
 
-const getBooks = async (req:Request, res:Response): Promise<void> => {
-    const bookData = await service.getBookData()
-    res.status(200).json(bookData);
+const getBooks = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+        const bookData = await getBookData();
+        res.status(200).json(bookData);
+    } catch (err) {
+        next(err);
+    }
 };
 
-const addBook = async (req:Request, res:Response): Promise<void> => {
-    const addedData =  await service.createBook(req.body)
-    res.status(201).json(addedData)
+const addBook = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+        const addedData =  await createBook(req.body);
+        res.status(201).json(addedData);
+    } catch (err) {
+        next(err);
+    }
 };
 
 
-export default { getBooks,addBook}
+export { 
+    getBooks,
+    addBook
+};
