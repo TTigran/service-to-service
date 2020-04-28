@@ -1,10 +1,10 @@
-import express from "express";
-import authorRouter from "../controller/author"
-const router = express.Router();
+import express from 'express';
+import { addAuthor, getAll, getAuthor, getById } from '../controller/author';
+const bookRouter = express.Router();
 
-router.get("/", authorRouter.getAuthor);
-router.get("/tobook/", authorRouter.getAll);
-router.get("/:id",authorRouter.getById);
-router.post("/",authorRouter.addAuthor);
+bookRouter.get('/', getAuthor);
+bookRouter.get('/tobook/', getAll);
+bookRouter.get('/:id', getById);
+bookRouter.post('/', addAuthor);
 
-export  default router;
+export  default bookRouter;

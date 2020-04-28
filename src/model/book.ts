@@ -1,22 +1,20 @@
-import mongoose,{Schema,Document} from "mongoose"
+import { Schema, Document, model } from 'mongoose';
 
 export interface IBook extends Document{
-    bookName:string,
-    authorID:number
+    bookName: string;
+    authorID: number;
 }
 
- const Book: Schema = new mongoose.Schema({
-      bookName: {
+ const Book: Schema = new Schema({
+      bookName: [{
         type: String,
         required: true,
         unique: true
-      },
-      authorID: {
-        type: Number
-      }
+      }],
+      authorID: Number
 });
 
-export const BookModel = mongoose.model<IBook>('Book', Book);
+export const BookModel = model<IBook>('Book', Book);
 
 
 
